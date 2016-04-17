@@ -1,1 +1,2 @@
-vacation.db
+*.db
+*.pyc
