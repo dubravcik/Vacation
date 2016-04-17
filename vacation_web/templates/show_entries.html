@@ -2,7 +2,7 @@
 {% block body %}
  <ul class=entries>
      {% for entry in entries %}
-       <li><h2>{{ entry.title }}</h2>{{entry.text|safe}}</li>
+       <li><h2>{{ entry.url }}</h2>{{entry.datetime|safe}}</li>
      {% else %}
        <li>No entries</li>
      {% endfor %}
