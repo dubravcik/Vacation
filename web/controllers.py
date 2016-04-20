@@ -1,5 +1,5 @@
 from flask import Blueprint, request, session, g, redirect, url_for, abort, render_template, flash
-from vacation_web.models import Vacation
+from web.models import Vacation
 
 web = Blueprint('web', __name__)
 
