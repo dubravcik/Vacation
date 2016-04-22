@@ -22,3 +22,12 @@ class Vacation(db.Model):
 
     def __repr__(self):
         return 'Vacation ', self.createdAt, self.url
+
+class Hotel(db.Model):
+    url = db.Column(db.String(500), primary_key=True)
+    id = db.Column(db.Integer)
+
+    def __init__(self,url):
+        self.url = url
+    def __repr__(self):
+        return 'Hotel', self.id
