@@ -10,8 +10,16 @@ class HotelAdmin(ModelView):
 #web = Blueprint('web', __name__)
 app = Flask(__name__)
 admin = Admin(app, name='microblog', template_mode='bootstrap3')
-admin.add_view(ModelView(Vacation, db.session))
-admin.add_view(ModelView(Hotel, db.session))
+
+class VacationModelView(ModelView):
+    column_display_pk = True
+    form_columns = ('url', 'createdAt', 'term', 'locationFrom', 'food', 'days', 'price', 'urlCrawled')
+class HotelModelView(ModelView):
+    column_display_pk = True
+    form_columns = ('id', 'url')
+
+admin.add_view(VacationModelView(Vacation, db.session))
+admin.add_view(HotelModelView(Hotel, db.session))
 
 @app.route('/')
 def show_entries():
